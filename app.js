@@ -14,8 +14,8 @@ app.use('/', express.static(__dirname+'/public'));
 
 app.use(morgan('short'));
 
-var port = 8000;
-var ip = 127.0.0.1;
+var port = process.env.PORT || 8000;
+var ip = "127.0.0.1";
 
 require('dns').lookup(require('os').hostname(), function(err, add, fam) {
   ip = add;
